@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_reader_mode"
+        android:icon="@drawable/ic_menu_book"
+        android:title="Chế độ đọc"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_reader_style"
+        android:icon="@drawable/ic_text_fields"
+        android:title="Tùy chỉnh đọc"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_speak"
+        android:icon="@drawable/ic_volume_up"
+        android:title="@string/action_speak"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_bookmark"
+        android:icon="@drawable/ic_bookmark_border"
+        android:title="@string/action_bookmark"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/action_share"
+        app:showAsAction="ifRoom" />
+</menu>

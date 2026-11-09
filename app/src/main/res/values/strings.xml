@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">RSS Reader</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_saved">Đã lưu</string>
+    <string name="nav_feeds">Nguồn tin</string>
+    <string name="nav_settings">Cài đặt</string>
+
+    <!-- Authentication -->
+    <string name="title_login">Đăng nhập</string>
+    <string name="title_register">Đăng ký tài khoản</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mật khẩu</string>
+    <string name="prompt_confirm_password">Xác nhận mật khẩu</string>
+    <string name="prompt_full_name">Họ và tên</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="btn_register">Đăng ký</string>
+    <string name="btn_logout">Đăng xuất</string>
+    <string name="link_to_register">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="link_to_login">Đã có tài khoản? Đăng nhập ngay</string>
+    <string name="guest_mode_notice">Bạn đang dùng ở chế độ Khách. Vui lòng đăng nhập để lưu bài viết.</string>
+
+    <!-- Home & Details -->
+    <string name="search_hint">Tìm kiếm bài viết...</string>
+    <string name="pull_to_refresh">Kéo để làm mới</string>
+    <string name="empty_articles">Không có bài viết nào</string>
+    <string name="empty_saved">Chưa có bài viết nào được lưu</string>
+    <string name="empty_feeds">Chưa có nguồn tin nào</string>
+    <string name="action_share">Chia sẻ</string>
+    <string name="action_bookmark">Lưu bài viết</string>
+    <string name="action_speak">Đọc bài</string>
+    <string name="action_close">Đóng</string>
+    <string name="category_all">Tất cả</string>
+
+    <!-- Settings -->
+    <string name="settings_theme">Giao diện (Chế độ tối)</string>
+    <string name="settings_font_size">Cỡ chữ đọc bài</string>
+    <string name="settings_sync_interval">Tần suất làm mới nền</string>
+    <string name="settings_account">Tài khoản</string>
+    <string name="settings_not_logged_in">Chưa đăng nhập</string>
+</resources>

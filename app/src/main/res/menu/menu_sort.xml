@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/sort_newest"
+        android:title="Mới nhất trước" />
+    <item
+        android:id="@+id/sort_oldest"
+        android:title="Cũ nhất trước" />
+    <item
+        android:id="@+id/sort_feed_a_z"
+        android:title="Theo tên nguồn (A - Z)" />
+</menu>

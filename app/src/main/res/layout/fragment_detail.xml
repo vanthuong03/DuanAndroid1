@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_close"
+            app:menu="@menu/detail_menu"
+            app:title="Chi tiết bài viết" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Progress Bar for Reader mode extraction -->
+        <ProgressBar
+            android:id="@+id/progressBarReader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollViewDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 1. OVERVIEW / SUMMARY MODE -->
+                <LinearLayout
+                    android:id="@+id/layoutOverview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvFeedSource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:text="VnExpress" />
+
+                    <TextView
+                        android:id="@+id/tvPubDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        tools:text="09/11/2026 09:00" />
+
+                    <TextView
+                        android:id="@+id/tvDetailTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/on_surface"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="Tiêu đề chi tiết bài viết đầy đủ được hiển thị rõ ràng và đẹp mắt" />
+
+                    <ImageView
+                        android:id="@+id/ivDetailImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="16dp"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Detail Image"
+                        android:background="@drawable/placeholder_image" />
+
+                    <TextView
+                        android:id="@+id/tvDetailDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/on_surface"
+                        android:textSize="16sp"
+                        tools:text="Nội dung bài viết được trích xuất từ RSS và hiển thị ở chế độ đọc nhanh..." />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnToggleReader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Bật chế độ đọc sạch (Reader Mode)"
+                        app:icon="@drawable/ic_menu_book" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenWeb"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="32dp"
+                        android:text="Mở bài gốc trên trình duyệt"
+                        app:icon="@drawable/ic_share" />
+
+                </LinearLayout>
+
+                <!-- 2. READER MODE (Clean extracted full article, custom themes, offline) -->
+                <LinearLayout
+                    android:id="@+id/layoutReaderMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvReaderSource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="VnExpress • 09/11/2026 09:00" />
+
+                    <TextView
+                        android:id="@+id/tvReaderTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="Tiêu đề toàn văn bài viết trong chế độ đọc Reader Mode" />
+
+                    <View
+                        android:id="@+id/dividerReader"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/card_stroke" />
+
+                    <TextView
+                        android:id="@+id/tvReaderContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="1.4"
+                        android:textSize="16sp"
+                        tools:text="Nội dung toàn văn bài báo được trích xuất bằng Jsoup không còn quảng cáo..." />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnReaderBackToSummary"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="32dp"
+                        android:text="Quay về chế độ tóm tắt" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

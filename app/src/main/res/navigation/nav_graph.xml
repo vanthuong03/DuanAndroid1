@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.rssreader.ui.home.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_home_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_saved"
+        android:name="com.example.rssreader.ui.saved.SavedFragment"
+        android:label="@string/nav_saved"
+        tools:layout="@layout/fragment_saved">
+        <action
+            android:id="@+id/action_saved_to_detail"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_saved_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_feeds"
+        android:name="com.example.rssreader.ui.feeds.FeedsFragment"
+        android:label="@string/nav_feeds"
+        tools:layout="@layout/fragment_feeds" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.rssreader.ui.settings.SettingsFragment"
+        android:label="@string/nav_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_settings_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_settings_to_profile"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_settings_to_history"
+            app:destination="@id/historyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.rssreader.ui.detail.DetailFragment"
+        android:label="Chi tiết bài viết"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_detail_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.rssreader.ui.auth.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.rssreader.ui.auth.RegisterFragment"
+        android:label="@string/title_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_register_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.rssreader.ui.auth.ProfileFragment"
+        android:label="Hồ sơ tài khoản"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_to_history"
+            app:destination="@id/historyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.rssreader.ui.history.HistoryFragment"
+        android:label="Đã xem gần đây"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_history_to_detail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+</navigation>
